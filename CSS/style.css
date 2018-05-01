@@ -3,13 +3,37 @@ html,
 body {
     margin: 0;
     font-family: "Tajawal", sans-serif;
+    background-color: #BCBBB8;
 }
 
+img {
+    width: 100%;
+}
+
+.picture {
+    width: 100%;
+}
+
+header{
+    padding: 1.6em;
+   background-color: #241D1B;
+}
+
+
 .event {
-    border: 1px solid #888888;
+    border-bottom: 2px solid #241D1B;
+    border-top: 2px solid #241D1B;
     padding: 1.5em;
-    margin: 1em;
-    box-shadow: 2px 3px rgba(0, 0, 0, 0.3);
+    margin: 1.1em;
+    background-color: white;
+}
+
+#singleEvent {
+    border-bottom: 2px solid #241D1B;
+    border-top: 2px solid #241D1B;
+    padding: 1.5em;
+    margin: 1.1em;
+    background-color: white;
 }
 
 #eventlist {
@@ -69,56 +93,110 @@ h1 {
     color: #750000;
 }
 
+/*menu*/
+
+.menu 
+{
+    text-decoration: none;
+    display: inline;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+.readmore {
+    text-align: center;
+    font-size: 1.2em;
+    text-decoration-line: none;
+    color: #241D1B;
+    border: 1px solid;
+    padding: 3px 12px;
+}
+
+.readmore:hover {
+    background-color: #750000;
+    color: #fff;
+}
+
+.logo {
+    width: 8em;
+    height: 5, 5em;
+    display: inline;
+}
+
+.description {
+    text-align: left;
+}
+
 
 /*MENU*/
 
-
 .appbar {
-  width: 100vw;
-  height: var(--header-height);
-  top: 0;
-  left:0;
+    width: 100vw;
+    height: var(--header-height);
+    top: 0;
+    left: 0;
 }
-.appbar, .menu {
-  background: teal;
-  padding: 0,5em;
-  position: fixed;
-}
+
+.appbar,
 .menu {
-  top: var(--header-height);
-  height: 100vh;
-  width: 100vw;
-  transition: all 0.3s 0.3s;
-  color: white;
+    background: #7A7675;
+    padding: 0, 5em;
+    position: fixed;
 }
+
+.menu {
+    top: var(--header-height);
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.3s 0.3s;
+    color: white;
+}
+
 .menu.hidden {
-  transform: translateX(-100vw);
+    transform: translateX(-100vw);
 }
+
 .container-fluid {
-  margin: 1em;
-  margin-top: var(--header-height);
+    margin: 1em;
+    margin-top: var(--header-height);
 }
+
 .menuIcon {
-  height: 30px;
-  margin-top: 10px;
-  margin-left: 12px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 12px;
+    float: right;
 }
+
 .menuIcon rect {
-  fill: white;
-  transition: all 0.6s;
+    fill: white;
+    transition: all 0.6s;
 }
-.menuIcon rect:nth-child(1){
-  transform-origin: left top;
+
+.menuIcon rect:nth-child(1) {
+    transform-origin: left top;
 }
-.menuIcon rect:nth-child(3){
-  transform-origin: left bottom;
+
+.menuIcon rect:nth-child(3) {
+    transform-origin: left bottom;
 }
+
 .menuIcon rect.fadeOut {
-  opacity: 0;
+    opacity: 0;
 }
+
 .menuIcon rect.rotateUp {
-  transform: rotate(-45deg) translate(18px, 41px);
+    transform: rotate(-45deg) translate(18px, 41px);
 }
+
 .menuIcon rect.rotateDown {
-  transform: rotate(45deg) translate(17px, -14px);
+    transform: rotate(45deg) translate(17px, -14px);
 }

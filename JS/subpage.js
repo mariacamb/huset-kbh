@@ -24,12 +24,11 @@ function showSinglePost(aPost) {
      document.querySelector(".price span").textContent = aPost.acf.price_;
     
      document.querySelector(".description").innerHTML = aPost.content.rendered
-    
-    document.querySelector(".fblink").textContent= aPost.acf.facebook_link_;
+
+ 
     
      
-     
-    
+
     
     
     

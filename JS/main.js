@@ -5,11 +5,38 @@ let lookingForData = false;
 
 function fetchEvents() {
     lookingForData = true;
+    
+    /*
     fetch("http://cambalova.com/wordpress/wp-json/wp/v2/events?_embed&per_page=3&page=" + page)
         .then(e => e.json())
         .then(showEvents)
 
 }
+
+*/
+ let urlParams = new URLSearchParams(window.location.search);
+    let catid = urlParams.get("category");
+    if(catid) {
+        fetch("http://cambalova.com/wordpress/wp-json/wp/v2/events?_embed&per_page=5&categories=9,11&order=asc&page=" + page + "&categories=" + catid)
+        .then(e => e.json())
+        .then(showEvents);
+
+    } else {
+         fetch("http://cambalova.com/wordpress/wp-json/wp/v2/events?_embed&per_page=5&categories=9,11&order=asc&page=" + page)
+        .then(e => e.json())
+        .then(showEvents);
+    }
+
+}
+
+
+
+
+
+
+
+
+
 
 function showEvents(data) {
     console.log(data)
@@ -22,6 +49,11 @@ function showSingleEvent(anEvent) {
     let template = document.querySelector("#eventstemp").content;
     let clone = template.cloneNode(true);
 
+    
+    
+    
+    
+    
 
     //TITLE
     clone.querySelector("h1").textContent = anEvent.title.rendered;
@@ -46,6 +78,7 @@ function showSingleEvent(anEvent) {
     //READ MORE
     clone.querySelector(".readmore").href = "subpage.html?id=" + anEvent.id;
 
+   
 
 
     //IMAGE 
@@ -60,6 +93,8 @@ function showSingleEvent(anEvent) {
     eventlist.appendChild(clone);
 
 }
+
+
 
 
 

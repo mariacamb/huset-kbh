@@ -3,13 +3,44 @@ html,
 body {
     margin: 0;
     font-family: "Tajawal", sans-serif;
+    background-color: #605858;
 }
 
+img {
+    width: 100%;
+}
+
+.picture {
+    width: 100%;
+    
+}
+
+header{
+    padding: 1em;
+   background-color: #241D1B;
+}
+
+
+
+
+
+
+
+
+
 .event {
-    border: 1px solid #888888;
+   
+   
+    padding: 1em;
+    margin: 0.5em;
+    background-color: white;
+}
+
+#singleEvent {
+   
     padding: 1.5em;
-    margin: 1em;
-    box-shadow: 2px 3px rgba(0, 0, 0, 0.3);
+    
+    background-color: white;
 }
 
 #eventlist {
@@ -41,9 +72,24 @@ body {
 
 /* STYLING THE CONTENT*/
 
+footer {
+    padding: 1.2em;
+   background-color: #241D1B;
+ 
+}
+
+footer img 
+{
+   
+   width: 8em;
+    height: 5, 5em;
+    display:inline-block;
+}
+
 h1 {
     text-align: center;
-    font-size: 1.5em;
+  top:inherit;
+    font-size: 1.4em;
 }
 
 .date {
@@ -69,56 +115,196 @@ h1 {
     color: #750000;
 }
 
+/*menu*/
 
-/*MENU*/
+/*    navgiation    */
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #1f2227;
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+nav ul li a:hover {
+    color: #808080;
+    text-decoration: none;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #241D1B;
+    opacity: 0;
+    transition: all 0.2s ease;
+
+}
+
+.nav-container ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.nav-container ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+}
+
+.nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+}
+
+.nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+}
+
+.nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+}
+
+.nav-container ul li:not(:first-child) {
+    margin-left: 0;
+}
+
+.nav-container ul li a {
+    padding: 10px 45px;
+    opacity: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+}
+
+.nav-open {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    /* border-radius: 50%;*/
+    background: #241D1B;
+    margin-top: 0.7em
+}
 
 
-.appbar {
-  width: 100vw;
-  height: var(--header-height);
-  top: 0;
-  left:0;
+
+.nav-open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #cbcbcb;
+    /*color of burger menu*/
+    border-radius: 2px;
+    margin-left: 14px;
 }
-.appbar, .menu {
-  background: teal;
-  padding: 0,5em;
-  position: fixed;
+
+.nav-open i:nth-child(1) {
+    margin-top: 16px;
 }
-.menu {
-  top: var(--header-height);
-  height: 100vh;
-  width: 100vw;
-  transition: all 0.3s 0.3s;
-  color: white;
+
+.nav-open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
 }
-.menu.hidden {
-  transform: translateX(-100vw);
+
+.nav-open i:nth-child(3) {
+    margin-top: 4px;
 }
-.container-fluid {
-  margin: 1em;
-  margin-top: var(--header-height);
+
+
+#nav:checked + .nav-open {
+    transform: rotate(45deg);
 }
-.menuIcon {
-  height: 30px;
-  margin-top: 10px;
-  margin-left: 12px;
+
+#nav:checked + .nav-open i {
+    background: #cbcbcb;
+    transition: transform 0.2s ease;
 }
-.menuIcon rect {
-  fill: white;
-  transition: all 0.6s;
+
+#nav:checked + .nav-open i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
 }
-.menuIcon rect:nth-child(1){
-  transform-origin: left top;
+
+#nav:checked + .nav-open i:nth-child(2) {
+    opacity: 0;
 }
-.menuIcon rect:nth-child(3){
-  transform-origin: left bottom;
+
+#nav:checked + .nav-open i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
 }
-.menuIcon rect.fadeOut {
-  opacity: 0;
+
+#nav:checked ~ .nav-container {
+    z-index: 9990;
+    opacity: 1;
 }
-.menuIcon rect.rotateUp {
-  transform: rotate(-45deg) translate(18px, 41px);
+
+#nav:checked ~ .nav-container ul li a {
+    opacity: 1;
+    transform: translateY(0);
 }
-.menuIcon rect.rotateDown {
-  transform: rotate(45deg) translate(17px, -14px);
+
+.hidden {
+    display: none;
 }
+
+
+
+
+.readmore {
+    text-align: center;
+    font-size: 1.2em;
+    text-decoration-line: none;
+    color: #fff;
+     background-color: #750000;
+    border: 1px solid;
+    padding: 3px 12px;
+}
+
+.readmore:hover {
+    background-color: #931C1C;
+    color: #fff;
+}
+
+
+
+
+
+
+
+.logo {
+    width: 8em;
+    height: 5, 5em;
+    display: inline;
+    
+}
+
+.menuicon{
+    width: 2em;
+    display: inline-block;;
+}
+
+
+.description {
+    text-align: left;
+}
+
+
